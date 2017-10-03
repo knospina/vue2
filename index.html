@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Trying Vue2</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css"></link>
+    <style>
+        body {
+            padding-top: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p>
+        Here is <a href="https://laracasts.com/series/learn-vue-2-step-by-step/episodes/11?autoplay=true">LINK</a>
+    </p>
+
+    <div id="root" class="container">
+
+        <message title="Hello world" body="Lorem ipsum utt"></message>
+
+        <message title="Different Hello world" body="Lorem ipsum utt different"></message>
+
+        <modal v-if="showModal" @close="showModal=false">
+            <p>Insert any text here</p>
+        </modal>
+
+        <button @click="showModal=true" type="button">Show modal</button>
+
+        <task-list></task-list>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
