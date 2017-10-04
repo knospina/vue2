@@ -16,22 +16,47 @@
 <body>
 
     <p>
-        <span>also this - https://hackernoon.com/5-free-vuejs-tutorials-3caa8ff865e9</span> Here is <a href="https://laracasts.com/series/learn-vue-2-step-by-step/episodes/11?autoplay=true">LINK</a>
+        <span>also this - https://hackernoon.com/5-free-vuejs-tutorials-3caa8ff865e9</span> Here is <a href="https://laracasts.com/series/learn-vue-2-step-by-step/episodes/14?autoplay=true">LINK</a>
     </p>
 
     <div id="root" class="container">
 
-        <message title="Hello world" body="Lorem ipsum utt"></message>
+        <coupon></coupon>
 
-        <message title="Different Hello world" body="Lorem ipsum utt different"></message>
+        <h1 v-if="couponApplied">You used a coupon</h1>
 
-        <modal v-if="showModal" @close="showModal=false">
-            <p>Insert any text here</p>
-        </modal>
+        <tabs>
 
-        <button @click="showModal=true" type="button">Show modal</button>
+            <tab name="About Us" :selected="true">
 
-        <task-list></task-list>
+                <h1>Here is the content for the about us tab</h1>
+
+            </tab>
+
+            <tab name="About Our culture">
+
+                <h1>Here is the content for the about our cutlure tab</h1>
+            </tab>
+
+            <tab name="About Our vision">
+
+                <h1>Here is the content for the about our vision tab</h1>
+
+                <message title="Hello world" body="Lorem ipsum utt"></message>
+
+                <message title="Different Hello world" body="Lorem ipsum utt different"></message>
+
+                <modal v-if="showModal" @close="showModal=false">
+                    <p>Insert any text here</p>
+                </modal>
+
+                <button @click="showModal=true" type="button">Show modal</button>
+
+                <task-list></task-list>
+
+            </tab>
+
+        </tabs>
 
     </div>
 
